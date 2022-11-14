@@ -118,12 +118,6 @@ for (var i = 0; i < finances.length; i++) {
 
 averageOfChangesInProfitLosses = (parseInt(totalAmountOfProfitOrLosses) / parseInt(totalNumberOfMonths)).toFixed(2);
 
-// for (var i = 0; i < finances.length; i++) {
-//     averageOfChangesInProfitLosses = ()
-// }
-    
-
-// console.log (data.)
 
 
 console.log(financialAnalysis);
