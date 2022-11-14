@@ -107,3 +107,29 @@ var amountOfGreatestIncreaseInProfits = 0;
 var dateOfGreatestDecreaseInProfits;
 var amountOfGreatestDecreaseInProfits = 0;
 
+
+for (var i = 0; i < finances.length; i++) {
+    totalNumberOfMonths++;
+}
+
+for (var i = 0; i < finances.length; i++) {
+    totalAmountOfProfitOrLosses = (parseInt(totalAmountOfProfitOrLosses) + parseInt(finances[i][1]));
+}
+
+averageOfChangesInProfitLosses = (parseInt(totalAmountOfProfitOrLosses) / parseInt(totalNumberOfMonths)).toFixed(2);
+
+// for (var i = 0; i < finances.length; i++) {
+//     averageOfChangesInProfitLosses = ()
+// }
+    
+
+// console.log (data.)
+
+
+console.log(financialAnalysis);
+console.log(divider);
+console.log(totalMonths + totalNumberOfMonths);
+console.log(total + dollar +totalAmountOfProfitOrLosses);
+console.log(averageChange + dollar + averageOfChangesInProfitLosses);
+console.log(greatestIncreaseInProfits + dateOfGreatestIncreaseInProfits + amountOfGreatestIncreaseInProfits);
+console.log(greatestDecreaseInProfits + dateOfGreatestDecreaseInProfits + amountOfGreatestDecreaseInProfits);
