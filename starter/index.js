@@ -96,34 +96,57 @@ var greatestIncreaseInProfits = "Greatest Increase in Profits: ";
 var greatestDecreaseInProfits = "Greatest Decrease in Profits: ";
 var dollar = "$";
 var hyphen = "-";
+var openBracket = " (";
+var closedBracket = ") ";
 
 var totalNumberOfMonths = 0;
 var totalAmountOfProfitOrLosses = 0;
 var averageOfChangesInProfitLosses = 0;
 
-var dateOfGreatestIncreaseInProfits;
+var dateOfGreatestIncreaseInProfits = "";
 var amountOfGreatestIncreaseInProfits = 0;
 
-var dateOfGreatestDecreaseInProfits;
+var dateOfGreatestDecreaseInProfits = "";
 var amountOfGreatestDecreaseInProfits = 0;
 
-
+//Calculation of the total number of months included in the dataset
 for (var i = 0; i < finances.length; i++) {
     totalNumberOfMonths++;
 }
 
+//Calculation of the net total amount of Profit/Losses over the entire period
 for (var i = 0; i < finances.length; i++) {
     totalAmountOfProfitOrLosses = (parseInt(totalAmountOfProfitOrLosses) + parseInt(finances[i][1]));
 }
 
+//Calculation of the average of the changes in Profit/Losses over the entire period
 averageOfChangesInProfitLosses = (parseInt(totalAmountOfProfitOrLosses) / parseInt(totalNumberOfMonths)).toFixed(2);
 
+//Calculation of the greatest increase in profits (date and amount) over the entire period
+for (var i = 0; i < finances.length; i++) {
+    var month = finances[i][0];
+    var money = finances[i][1];
+    if (amountOfGreatestIncreaseInProfits <= money) {
+        dateOfGreatestIncreaseInProfits = month;
+        amountOfGreatestIncreaseInProfits = money;
+    }
+  }
 
+//Calculation of the greatest decrease in profits (date and amount) over the entire period
+for (var i = 0; i < finances.length; i++) {
+    var month = finances[i][0];
+    var money = finances[i][1];
+    if (amountOfGreatestDecreaseInProfits >= money) {
+        dateOfGreatestDecreaseInProfits = month;
+        amountOfGreatestDecreaseInProfits = money;
+    }
+  }
 
+//Formation and output of data for the user
 console.log(financialAnalysis);
 console.log(divider);
 console.log(totalMonths + totalNumberOfMonths);
 console.log(total + dollar +totalAmountOfProfitOrLosses);
 console.log(averageChange + dollar + averageOfChangesInProfitLosses);
-console.log(greatestIncreaseInProfits + dateOfGreatestIncreaseInProfits + amountOfGreatestIncreaseInProfits);
-console.log(greatestDecreaseInProfits + dateOfGreatestDecreaseInProfits + amountOfGreatestDecreaseInProfits);
+console.log(greatestIncreaseInProfits + dateOfGreatestIncreaseInProfits + openBracket + dollar + amountOfGreatestIncreaseInProfits + closedBracket);
+console.log(greatestDecreaseInProfits + dateOfGreatestDecreaseInProfits + openBracket + dollar + amountOfGreatestDecreaseInProfits + closedBracket);
